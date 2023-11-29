@@ -1,0 +1,274 @@
+
+body {
+    background-color: 	#F2EEF9;
+  }
+
+ h1 {
+    text-align: center;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    margin-bottom: 50px;
+    color: palevioletred;
+  }
+
+  h2 {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color:blue;
+    padding-left: 30px;
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .prompt-container p {
+    text-align: center;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
+    color: #333333;
+  }
+
+  .survey-container p {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: black;
+  }
+
+
+  h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    border: 1px solid white; 
+    background-color: rgb(112, 53, 208);
+    padding: 20px; 
+  }
+  
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: grey;
+  }
+
+  
+   input[type="text"],
+   textarea {
+     padding: 10px;
+     margin-bottom: 15px;
+     border-radius: 4px;
+     border: 1px solid #ccc;
+     display: flex;
+     font-size: 17px;
+   }
+
+  label {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: black;
+    margin: 10px;
+    line-height: 2;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  label input {
+    margin: 0 !important;
+    margin-left: 12px !important;
+  }
+
+
+ .help-is-available-container {
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(88, 247, 247);
+    padding: 10px;
+    padding-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+
+
+  .name-prompt-container {
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    padding-bottom: 40px;
+  }
+  
+  .age-range-container {
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    padding: 20px; 
+    padding-bottom: 40px;
+  }
+
+
+  .how-are-you-feeling-today-container {
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    padding: 20px; 
+    padding-bottom: 50px;
+  }
+
+
+  .help-for-who-container {
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    padding: 20px; 
+  }
+
+  .help-for-who-container label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+  .user-concerns-container {
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    padding: 20px; 
+  }
+
+  .user-concerns-container label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+
+
+  .smiley-container {
+    font-size: 40px;
+  }
+  
+
+  .smiley {
+    cursor: pointer;
+    margin: 10px;
+  }
+
+
+  form {
+    display: inline-block;
+  }
+
+
+
+  .hide {
+    display: none;
+  }
+      
+  .Anxiety:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  .Depression:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+ .eatingDisorder:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  .Addiction:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  .ADHD:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+  
+  .PTSD:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  .OCD:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  .Dementia:hover + .hide {
+    display: block;
+    color: red;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+
+  button[type="submit"] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+
+  button[type="submit"]:hover {
+    background-color: purple;
+  }
+
+
+
+

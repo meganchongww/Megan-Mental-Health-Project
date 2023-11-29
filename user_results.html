@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MinderGap - Results</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"> 
+</head>
+
+<style>
+  .collapsible {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid whitesmoke;;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color:green;
+  }
+  
+  .content {
+    padding: 0 18px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+
+  
+  </style>
+
+<body>
+
+  <div id="userNamePlaceholder"></div>
+  <div id="helplinesPlaceholder"></div>
+  <div id="caregiverSupportGroupsPlaceholder"></div>
+
+
+  <br />
+  <br />
+
+
+<script>
+  
+    const HELPLINES = [ 
+      {
+        "name": "Brahm Centre Assistline",
+        "detail": "For anybody in distress who needs an empathetic ear and emotional support",
+        "telephone":"6655-0000 / 8823-0000 (WhatsApp available)",
+        "availability": "Daily from 9am - 10.30pm",
+        "showWhen": ["Myself", "friendFamily", "Elderly"]
+      },
+      {
+        "name": "Caregivers Alliance Limited Helpline",
+        "detail": "For caregivers who are caring for persons living with dementia and living with mental health issues",
+        "telephone":"6460-4400",
+        "availability": "Mon - Fri, 9am - 6pm",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Care Corner Counselling Hotline",
+        "detail": "For those who need counselling and advice",
+        "telephone":"1800-353-5800",
+        "availability": "Mon - Sun, 10am - 10pm (except public holidays)",
+        "showWhen": ["Myself", "friendFamily", "Elderly"]
+      },
+      {
+        "name": "Dementia Hotline (by Dementia Singapore)",
+        "detail": "For caregivers who are caring for persons living with dementia",
+        "telephone":"6377-0700",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Mental Health Helpline (by Institute of Mental Health)",
+        "detail": "For psychiatric emergencies",
+        "telephone":"6389-2222",
+        "availability": "24 hours",
+        "showWhen": ["Myself", "friendFamily", "Elderly"]
+      },
+      {
+        "name": "Samaritans of Singapore (SOS)",
+        "detail": "For anybody in crisis and persons with suicidal tendencies",
+        "telephone":"1-767 / 9151-1767 (CareText Whatsapp)",
+        "availability": "24 hours",
+        "showWhen": ["Myself", "friendFamily", "Elderly"]
+      },
+      {
+        "name": "Silver Ribbon (Singapore)",
+        "detail": "For online emotional support",
+        "telephone":"6386-1928",
+        "availability": "Mon - Fri, 9am - 5pm (except public holidays)",
+        "showWhen": ["Myself", "friendFamily", "Elderly"]
+      },
+      {
+        "name": "Singapore Association for Mental Health Helpline",
+        "detail": "For people who have psychological, psychiatric or social problems, and others who need information for such persons",
+        "telephone":"1800-283-7019",
+        "availability": "Mon - Fri, 9am - 6pm",
+        "showWhen": ["Myself", "friendFamily", "Elderly"]
+      },
+    ];
+
+
+    const CAREGIVERSUPPORTGROUPS = [
+      {
+        "name": "Caregivers Alliance Limited",
+        "address": "491-B River Valley Road #04-04, Valley Point Office Tower S248373",
+        "telephone":"6460-4400",
+        "website": '<a href="https://www.cal.org.sg">www.cal.org.sg</a>',
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Dementia Singapore (Bendemeer)",
+        "address": "20 Bendemeer Road #01-02, BS Bendemeer Centre S339914",
+        "telephone":"6377-0700",
+        "website": '<a href="www.dementia.org.sg">www.dementia.org.sg</a>',
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Dementia Singapore (Tiong Bahru)",
+        "address": "298 Tiong Bahru Road #10-05, Central Plaza S168730",
+        "telephone":"6389-5389",
+        "website": '<a href="www.dementia.org.sg">www.dementia.org.sg</a>',
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "National Neuroscience Institute Dementia Support Group",
+        "address": "11 Jalan Tan Tock Seng S308433",
+        "telephone":"9720-8718 (call or SMS for registration purpose only)",
+        "email": "mei_mei_nyu@nni.com.sg",
+        "website": '<a href="www.nni.com.sg/patient-care/dementia-support-group-meetings">www.nni.com.sg/patient-care/dementia-support-group-meetings</a>',
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Singapore General Hospital Dementia Support Group",
+        "address": "Outram Road S169608",
+        "telephone":"6222-3322",
+        "website": '<a href="www.sgh.com.sg/patient-care/inpatient-day-surgery/supportgroups#">www.sgh.com.sg/patient-care/inpatient-day-surgery/supportgroups#</a>',
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "TOUCH Caregivers Support",
+        "address": "Blk 444 Ang Mo Kio Avenue 10 #01-1603 S560444",
+        "telephone":"6804-6555",
+        "email": "caregivers@touch.org.sg",
+        "showWhen": ["Caregiver"]
+      },  
+      {
+        "name": "Asian Women's welfare Association (AWWA)",
+        "telephone":"9784-9247",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Khoo Teck Puat Hospital Dementia Support Group",
+        "address": "90 Yishun Central S768828",
+        "telephone":"6804-6555",
+        "email": "ktph.memorycare@ktph.com.sg",
+        "website": '<a href="www.ktph.com.sg/dementia_support_group">www.ktph.com.sg/dementia_support_group</a>',
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Ang Mo Kio Family Service Centre (AMKFSC) Community Services",
+        "address": "Blk 182 Rivervale Crescent #01-311 S540182",
+        "telephone":"6385-0260",
+        "email": "refer2comnet@amkfsc.org.sg",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Brahm Centre",
+        "address": "Blk 55 Pipit Road #01-01 S370055",
+        "telephone":"6741-1131",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Caregiving Welfare Association",
+        "address": "Blk 3 Ghim Moh Road #01-294 S270003",
+        "telephone":"6466-7957 / 6466-7996",
+        "email": '<a href="www.cwa.org.sg">www.cwa.org.sg</a>',
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Club HEAL",
+        "address": " Blk 254 Bukit Batok East Avenue 4 #01-229 S650254",
+        "telephone":"6899-3463",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Fei Yue Community Services (Commonwealth)",
+        "address": "Blk 107 Commonwealth Crescent #01-230 S140107",
+        "telephone":"6011-7651",
+        "email": "crest@fycs.org",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "Fei Yue Community Services (Teck Whye)",
+        "address": "Blk 11 Teck Whye Lane #01-222 S680011",
+        "telephone":"6011-7657",
+        "email": "crest@fycs.org",
+        "showWhen": ["Caregiver"]
+      },
+      {
+        "name": "REACH Community Services",
+        "address": "Blk 377A Bukit Batok Street 31 #01-24 S651377",
+        "telephone":"6801-0878 / 6801-0876",
+        "email": "crest-ss@reach.org.sg",
+        "showWhen": ["Caregiver"]
+      },
+    ];
+
+    // JavaScript to get the query parameter from the URL
+    const params = new URLSearchParams(window.location.search);
+    console.log('url params', params);
+    const userName = params.get('userName');
+    console.log('userName is', userName);
+    if (userName) {
+      document.getElementById("userNamePlaceholder").innerHTML = `<p style="color: black; font-family: Arial, Helvetica, sans-serif; font-size: 25px;">Hello ${userName}, here are your results:</p>`;
+    }
+
+    // Renders helplines in HTML based on user input from prev page
+    document.addEventListener('DOMContentLoaded', function() {
+      const userType = params.get('userType');
+      const helplinesToRender = HELPLINES.map((helpline) => {
+        const showWhenArray = Array.isArray(helpline.showWhen) ? helpline.showWhen : [helpline.showWhen];
+        if (!showWhenArray.includes(userType)) return '';
+
+        return  `
+            <button class="collapsible">${helpline.name}</button>
+            <div class="content" style="max-height: 0px">
+              <p>
+                <u>Details</u>: ${helpline.detail || 'Not specified'}
+                <br />
+                <br />
+                <u>Telephone</u>: ${helpline.telephone || 'Not specified'}
+                <br />
+                <br />
+                <u>Email</u>: ${helpline.email || 'Not specified'}
+                <br />
+                <br />
+                <u>Website</u>: ${helpline.website || 'Not specified'}
+                <br />
+                <br />
+                <u>Availability</u>: ${helpline.availability || 'Not specified'}
+              </p>
+            </div>`;
+
+      });
+      const helplinesPlaceholder = document.getElementById('helplinesPlaceholder');
+      helplinesPlaceholder.innerHTML =helplinesToRender.join('');
+  });
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const userType = params.get('userType');
+      const caregiversToRender = CAREGIVERSUPPORTGROUPS.map((caregiver) => {
+        const showWhenArray = Array.isArray(caregiver.showWhen) ? caregiver.showWhen : [caregiver.showWhen];
+        if (!showWhenArray.includes(userType)) return '';
+
+        return  `
+            <button class="collapsible">${caregiver.name}</button>
+            <div class="content" style="max-height: 0px">
+              <p>
+                <u>Details</u>: ${caregiver.detail || 'Not specified'}
+                <br />
+                <br />
+                <u>Telephone</u>: ${caregiver.telephone || 'Not specified'}
+                <br />
+                <br />
+                <u>Email</u>: ${caregiver.email || 'Not specified'}
+                <br />
+                <br />
+                <u>Website</u>: ${caregiver.website || 'Not specified'}
+                <br />
+                <br />
+                <u>Availability</u>: ${caregiver.availability || 'Not specified'}
+              </p>
+            </div>`;
+
+      });
+      const caregiverSupportGroupsPlaceholder = document.getElementById('caregiverSupportGroupsPlaceholder');
+      caregiverSupportGroupsPlaceholder.innerHTML =caregiversToRender.join('');
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight != "0px"){
+          content.style.maxHeight = "0px";
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+  });
+
+</script>
+
+</body>
+
+</html>

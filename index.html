@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MinderGap</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"> 
+</head>
+
+<body>
+
+<div class="prompt-container">
+    <h1>Welcome to Mindergap!</h1>
+    <p>This webapp seeks to be a mental health directory that recommends Singapore-based resources according to your needs.</p>
+    <br />
+    <br />
+</div>
+
+<br />
+
+<div class="help-is-available-container">
+    <h2>URGENT HELP IS AVAILABLE</h2>
+    <p style="color: black; font-size: 18px; padding-left: 30px;">If you need to speak to someone today, call the <span style="font-weight: 700;">SOS hotline</span> at <a class="sc-hmdomO hYYPhy" href="tel:1-767" style="text-decoration: none;"><span class="sc-kAyceB efIjSI">1-767</span></a> (24 hours everyday).</p>
+</div>
+
+<br />
+
+<div class="survey-container">
+    <hr />
+    <br />
+    <p style= "padding-left: 20px;">Before we start, let me get to know you better so I can recommend suitable resources. 
+    <br />
+    <br />
+    <br />
+    Please answer the following 5 questions below:</p>
+
+</div>
+
+
+
+<br />
+<br />
+
+<form id="submitForm">
+<div class="name-prompt-container">
+    <h3>1. What is your name?</h3>
+    <p><i>Let us know how we should address you.</i></p>
+    <input type="text" 
+            id="userName" 
+            placeholder="Enter your name"
+            required>
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="age-range-container">
+    <h3>2. What is your age range?</h3>
+    <label for="ageRange"></label>
+
+    <select name="ageRange" id="ageRange" style="height: 40px; width: 200px; font-size: 17px; font-family: Arial, Helvetica, sans-serif; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border: 1px solid #ccc;" required>
+        <option value="" disabled selected style="color: grey;">Select your age range</option>
+        <option value="Preteen"> < 12 years old</option>
+        <option value="Midteen">12 - 18 years old</option>
+        <option value="Highteen">19 - 24 years old</option>
+        <option value="Youngadult">25 - 34 years old</option>
+        <option value="Midadult">35 - 44 years old</option>
+        <option value="Highadult">45 - 54 years old</option>
+        <option value="Oldadult">55 - 64 years old</option>
+        <option value="Elderly">> 64 years old</option>
+    </select>
+    
+</div>
+
+  <br />
+  <br />
+  <br />
+
+<div class="how-are-you-feeling-today-container">
+    <h3>3. How are you feeling today?</h3>
+    <p><i>Please choose one of the smiley faces below:</i></p>
+        <div class="smiley-container">
+            <input type="radio" id="smiley1" name="feelingToday" value="5" required checked>
+            <a href="name_prompt.html?smiley=1"><span class="smiley">😊</span></a>
+            <input type="radio" id="smiley2" name="feelingToday" value="4" required>
+            <a href="name_prompt.html?smiley=2"><span class="smiley">🙂</span></a>
+            <input type="radio" id="smiley3" name="feelingToday" value="3" required>
+            <a href="name_prompt.html?smiley=3"><span class="smiley">😐</span></a>
+            <input type="radio" id="smiley4" name="feelingToday" value="2" required>
+            <a href="name_prompt.html?smiley=4"><span class="smiley">☹️</span></a>
+            <input type="radio" id="smiley5" name="feelingToday" value="1" required>
+            <a href="name_prompt.html?smiley=5"><span class="smiley">😞</span></a>
+        </div>
+        
+</div>
+  
+  <br />
+  <br />
+  <br />
+
+<div class="help-for-who-container">
+    <h3>4. What user profile best suits you?</h3>
+            <div>
+                <input type="radio"
+                       id="Myself"
+                       name="userType"
+                       value="Myself"
+                       required checked>
+                <label for="Myself">I am looking for resources to help myself.</label>
+            </div>
+     
+            <div>
+                <input type="radio"
+                       id="friendFamily"
+                       name="userType"
+                       value="friendFamily"
+                       required>
+                <label for="friendFamily">I am looking for resources to help someone else.</label>
+            </div>
+     
+            <div>
+                <input type="radio"
+                       id="Caregiver"
+                       name="userType"
+                       value="Caregiver"
+                       required>
+                <label for="Caregiver">I am a caregiver and I would like some caregiver-specific support.</label>
+            </div>
+
+            <div>
+                <input type="radio"
+                       id="Elderly"
+                       name="userType"
+                       value="Elderly"
+                       required>
+                <label for="Elderly">I am looking for some elderly-specific resources.</label>
+            </div>
+      
+            <div>
+                <input type="radio"
+                       id="Others"
+                       name="userType"
+                       value="Others"
+                       required>
+                <label for="Others">Others:
+                <input type="text" 
+                        id="userName" 
+                        placeholder="Anybody else?">
+                </label>
+            </div>
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="user-concerns-container">
+    <h3>5. What are some of your concerns?</h3>
+        <p><i>Please note that the options below are not listed in order of severity. 
+            <br />
+            <br />
+            You may choose more than one concern, but recommend to choose 1 per search for more targeted results.</i></p>
+            <div class="Anxiety">
+                <input type="radio"
+                       id="Anxiety"
+                       name="concernType"
+                       value="Anxiety"
+                       required checked>
+                <label for="Anxiety">Anxiety</label>
+            </div>
+            <div class="hide">Excessive anxiety and worry (apprehensive expectation), occurring more days than not for at least 6 months, about a number of events or activities (such as work or school performance).</div>
+      
+            <div class="Depression">
+                <input type="radio"
+                       id="Depression"
+                       name="concernType"
+                       value="Depression"
+                       required>
+                <label for="Depression">Depression</label>
+            </div>
+            <div class="hide">Depression is a mood disorder that causes a persistent feeling of sadness and loss of interest for long periods of time.</div>
+
+            <div class="eatingDisorder">
+                <input type="radio"
+                       id="eatingDisorder"
+                       name="concernType"
+                       value="eatingDisorder"
+                       required>
+                <label for="eatingDisorder">Eating Disorder</label>
+            </div>
+            <div class="hide">Eating Disorders are behavioral conditions characterized by severe and persistent disturbance in eating behaviors and associated distressing thoughts and emotions.</div>
+        
+            <div class="Addiction">
+                <input type="radio"
+                       id="Addiction"
+                       name="concernType"
+                       value="Addiction"
+                       required>
+                <label for="Addiction">Addiction & Substance Abuse</label>
+            </div>
+            <div class="hide">Addiction & Substance Abuse is defined as a chronic, relapsing pattern of compulsive substance use despite adverse consequences.</div>
+        
+            <div class="ADHD">
+                <input type="radio"
+                       id="ADHD"
+                       name="concernType"
+                       value="ADHD"
+                       required>
+                <label for="ADHD">Attention Deficit Hyperactivity Disorder (ADHD)</label>
+            </div>
+            <div class="hide">ADHD is marked by an ongoing pattern of inattention and/or hyperactivity-impulsivity that interferes with functioning or development.</div>
+
+            <div class="PTSD">
+                <input type="radio"
+                       id="PTSD"
+                       name="concernType"
+                       value="PTSD"
+                       required>
+                <label for="PTSD">Post-Traumatic Stress Disorder (PTSD)</label>
+            </div>
+            <div class="hide">PTSD is the development of a set of reactions in people who have experienced a traumatic event that might have threatened their life or safety, or others around them.</div>
+
+            <div class="OCD">
+                <input type="radio"
+                       id="OCD"
+                       name="concernType"
+                       value="OCD"
+                       required>
+                <label for="OCD">Obsessive Compulsive Disorder (OCD)</label>
+            </div>
+            <div class="hide">OCD is a long-lasting pattern of behaviour in which a person experiences uncontrollable and recurring thoughts (obsessions), engages in repetitive behaviors (compulsions), or both.</div>
+            
+            <div class="Dementia">
+                <input type="radio"
+                       id="Dementia"
+                       name="concernType"
+                       value="Dementia"
+                       required>
+                <label for="Dementia">Dementia</label>
+            </div>
+            <div class="hide">Generally affecting people over the age of 65, Dementia is characterised by the progressive worsening of memory and intellect (cognitive abilities), orientation and personality to levels that affect daily life and activities.</div>
+
+
+            <div>
+                <input type="radio"
+                       id="Others"
+                       name="concernType"
+                       value="Others"
+                       required>
+                <label for="Others">Others:
+                <input type="text" 
+                        id="userName" 
+                        placeholder="Anything else?"> 
+                </label>
+            </div>
+    </div>
+
+
+<br />
+<br />
+<br />
+
+<button type="submit">Submit Form</button>
+</form>
+
+<script>
+    // function validateForm() {
+    //     console.log('running validate form')
+    //     var userName = document.getElementById("userName").value.trim();
+    //     if (userName === "") {
+    //     alert("Please enter your name.");
+    //     return false; 
+    //     }
+
+        
+    //     var ageRange = document.getElementById("age-range").value;
+    //     if (ageRange === "") {
+    //     alert("Please select your age range.");
+    //     return false; 
+    //     }
+
+        
+    //     var feelingToday = document.querySelector('input[name="feelingToday"]:checked');
+    //     if (!feelingToday) {
+    //     alert("Please select how you are feeling today.");
+    //     return false; 
+    //     }
+
+        
+    //     var helpForWho = document.querySelector('input[name="userType"]:checked');
+    //     if (!helpForWho) {
+    //     alert("Please select who you are seeking help for.");
+    //     return false; 
+    //     }
+
+        
+    //     var concerns = document.querySelector('input[name="concernType"]:checked');
+    //     if (!concerns) {
+    //     alert("Please select your concern.");
+    //     return false; 
+    //     }
+
+    //     return true;
+    // }
+
+    function submitHelp(event) {
+        console.log('submitting help form');
+        event.preventDefault()
+
+        const userName = document.getElementById ("userName").value;
+        const ageRange = document.getElementById ("ageRange").value;
+        const feelingToday = document.querySelector('input[name="feelingToday"]:checked').value;
+        const userType = document.querySelector('input[name="userType"]:checked').value;
+        const concernType = document.querySelector('input[name="concernType"]:checked').value;
+
+        console.log(userName, ageRange, feelingToday, userType, concernType);
+
+        window.location.href = `/user_results.html?userName=${userName}&ageRange=${ageRange}&feelingToday=${feelingToday}&userType=${userType}&concernType=${concernType}`;
+    }
+
+    const form = document.getElementById ("submitForm");
+    form.addEventListener("submit", submitHelp);
+    
+
+
+
+</script>
+  <!-- <script src="index.js"></script>  -->
+
+
+
+
+  </body>
+  </html>
